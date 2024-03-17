@@ -11,7 +11,16 @@ class Calculator:
                 continue
             if not arg[-1].isdigit():
                 raise Exception("Separator at the end of string is not allowed") from ValueError
-            new_arg = arg.replace("\n", ",")
+            new_arg = None
+            if arg[:2] == "//":
+                left = "//"
+                right = "\n"
+                sep = arg[arg.index(left)+len(left):arg.index(right)]
+                new_arg = arg[arg.index(right)+len(right):]
+                new_arg = new_arg.replace(sep, ",")
+                print(new_arg)
+            else:
+                new_arg = arg.replace("\n", ",")
             str_values.extend(new_arg.split(","))
         int_values = [int(x) for x in str_values]
         return sum(int_values)
