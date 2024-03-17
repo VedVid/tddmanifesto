@@ -3,8 +3,10 @@
 
 import pytest
 
+from kata_1 import FizzBuzzSolver
 
-def test__should_return_number__when_user_start_function():
+
+def test__should_return_correct_fizzbuzz_string__when_numeric_argument_is_provided():
     # Arrange
     fizzbuzz_solver = FizzBuzzSolver()
 
