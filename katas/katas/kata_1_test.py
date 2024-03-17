@@ -13,4 +13,8 @@ def test__should_return_correct_fizzbuzz_string__when_numeric_argument_is_provid
     # Act
     fizzbuzz_string = fizzbuzz_solver.solve(15)
 
-    assert fizzbuzz_string == "1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, Fizz Buzz"
+    # Assert
+    assert (
+        fizzbuzz_string
+        == "1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, Fizz Buzz"
+    )
