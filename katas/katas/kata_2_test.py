@@ -35,3 +35,13 @@ def test__should_return_number__when_string_has_only_one_negative_number():
 
     assert result_1 == -4
     assert result_2 == -33
+
+
+def test__should_return_sum_of_numbers__when_string_has_numbers_separated_with_comma():
+    calc = Calculator()
+
+    result_1 = calc.add("1,2")
+    result_2 = calc.add("12,-13")
+
+    assert result_1 == 3
+    assert result_2 == -1
