@@ -9,6 +9,8 @@ class Calculator:
             if arg == "":
                 str_values.append("0")
                 continue
+            if not arg[-1].isdigit():
+                raise Exception("Separator at the end of string is not allowed") from ValueError
             new_arg = arg.replace("\n", ",")
             str_values.extend(new_arg.split(","))
         int_values = [int(x) for x in str_values]
