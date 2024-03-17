@@ -57,3 +57,13 @@ def test__should_return_sum_of_numbers__when_string_contains_many_numbers_separa
     assert result_1 == 6
     assert result_2 == 66
     assert result_3 == 0
+
+
+def test__should_return_sum_of_all_numbers_in_all_arguments__when_multiple_arguments_passed():
+    calc = Calculator()
+
+    result_1 = calc.add("1", "2")
+    result_2 = calc.add("-5,2", "8,24", "")
+
+    assert result_1 == 3
+    assert result_2 == 35
