@@ -6,7 +6,5 @@ class Calculator:
     def add(exprstr):
         if exprstr == "":
             return 0
-        elif exprstr.isdigit():
-            return int(exprstr)
-        elif exprstr[1:].isdigit():
+        elif exprstr.isdigit() or (exprstr[1:].isdigit() and exprstr[0] == "-"):
             return int(exprstr)
