@@ -67,3 +67,11 @@ def test__should_return_sum_of_all_numbers_in_all_arguments__when_multiple_argum
 
     assert result_1 == 3
     assert result_2 == 29
+
+
+def test__should_return_sum_of_all_numbers__when_there_is_newline_instead_of_comma():
+    calc = Calculator()
+
+    result = calc.add("1,2\n3")
+
+    assert result == 6
