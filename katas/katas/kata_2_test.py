@@ -75,3 +75,17 @@ def test__should_return_sum_of_all_numbers__when_there_is_newline_instead_of_com
     result = calc.add("1,2\n3")
 
     assert result == 6
+
+
+def test__should_raise_exception__when_string_ends_with_separator_comma():
+    calc = Calculator()
+
+    with pytest.raises(Exception):
+        calc.add("1,2,")
+
+
+def test__should_raise_exception__when_string_ends_with_separator_newline():
+    calc = Calculator()
+
+    with pytest.raises(Exception):
+        calc.add("1,2\n")
