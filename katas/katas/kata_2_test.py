@@ -101,3 +101,10 @@ def test__should_handle_custom_delimiters__when_specific_string_format_is_passed
     assert result_1 == 4
     assert result_2 == 6
     assert result_3 == 7
+
+
+def test__should_raise_exception__when_string_does_not_have_consistent_separators():
+    calc = Calculator()
+
+    with pytest.raises(Exception, match="separator expected but"):
+        calc.add("//|\n1|2,3")
