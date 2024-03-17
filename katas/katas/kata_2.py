@@ -8,3 +8,5 @@ class Calculator:
             return 0
         elif exprstr.isdigit():
             return int(exprstr)
+        elif exprstr[1:].isdigit():
+            return int(exprstr)
