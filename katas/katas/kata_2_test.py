@@ -17,7 +17,7 @@ def test__should_return_zero__when_string_is_empty():
     assert result == 0
 
 
-def test__should_return_number__when_string_has_only_one_number():
+def test__should_return_number__when_string_has_only_one_positive_number():
     calc = Calculator()
 
     result_1 = calc.add("1")
@@ -25,3 +25,13 @@ def test__should_return_number__when_string_has_only_one_number():
 
     assert result_1 == 1
     assert result_2 == 54
+
+
+def test__should_return_number__when_string_has_only_one_negative_number():
+    calc = Calculator()
+
+    result_1 = calc.add("-4")
+    result_2 = calc.add("-33")
+
+    assert result_1 == -4
+    assert result_2 == -33
