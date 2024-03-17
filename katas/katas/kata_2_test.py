@@ -12,4 +12,4 @@ def test__should_return_zero__when_string_is_empty():
     result = Calculator.add("")
 
     # Assert
-    assert result == ""
+    assert result == 0
