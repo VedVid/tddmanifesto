@@ -89,3 +89,15 @@ def test__should_raise_exception__when_string_ends_with_separator_newline():
 
     with pytest.raises(Exception):
         calc.add("1,2\n")
+
+
+def test__should_handle_custom_delimiters__when_specific_string_format_is_passed():
+    calc = Calculator()
+
+    result_1 = calc.add("//;\n1;3")
+    result_2 = calc.add("//|\n1|2|3")
+    result_3 = calc.add("//sep\n2sep5")
+
+    assert result_1 == 4
+    assert result_2 == 6
+    assert result_3 == 7
