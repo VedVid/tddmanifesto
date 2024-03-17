@@ -66,4 +66,4 @@ def test__should_return_sum_of_all_numbers_in_all_arguments__when_multiple_argum
     result_2 = calc.add("-5,2", "8,24", "")
 
     assert result_1 == 3
-    assert result_2 == 35
+    assert result_2 == 29
