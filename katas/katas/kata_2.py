@@ -18,6 +18,10 @@ class Calculator:
                 right = "\n"
                 sep = arg[arg.index(left) + len(left) : arg.index(right)]
                 new_arg = arg[arg.index(right) + len(right) :]
+                all_seps = "".join(x for x in new_arg if not x.isdigit())
+                all_seps = all_seps.replace("" + sep + "", "")
+                if all_seps != "":
+                    raise Exception(f"{sep} separator expected but {all_seps} found.") from ValueError
                 new_arg = new_arg.replace(sep, ",")
             else:
                 new_arg = arg.replace("\n", ",")
