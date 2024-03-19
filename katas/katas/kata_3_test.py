@@ -35,3 +35,11 @@ def test__should_gather_all_errors__when_multiple_errors_encountered():
         "Password must be at least 8 characters" in result
         and "The password must contain at least 2 numbers" in result
     )
+
+
+def test__should_return_error__when_no_capital_letter_in_password():
+    validator = Validator()
+
+    result = validator.valide("12345ahjbd")
+
+    assert "The password must contain at least one capital letter" in result
