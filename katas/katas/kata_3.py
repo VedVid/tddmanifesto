@@ -11,4 +11,6 @@ class Validator:
             errors.append("The password must contain at least 2 numbers")
         if sum(ch.isupper() for ch in password) < 1:
             errors.append("The password must contain at least one capital letter")
+        if sum(not ch.isalnum() for ch in password) < 1:
+            errors.append("The password must contain at least one special character")
         return errors
