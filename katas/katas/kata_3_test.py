@@ -24,3 +24,14 @@ def test__should_return_error__when_password_lacks_two_numbers():
     result = validator.valide("abcdefgh")
 
     assert result == "The password must contain at least 2 numbers"
+
+
+def test__should_gather_all_errors__when_multiple_errors_encountered():
+    validator = Validator()
+
+    result = validator.valide("abcd")
+
+    assert (
+        "Password must be at least 8 characters" in result
+        and "The password must contain at least 2 numbers" in result
+    )
