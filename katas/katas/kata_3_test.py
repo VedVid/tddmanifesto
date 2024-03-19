@@ -40,6 +40,8 @@ def test__should_gather_all_errors__when_multiple_errors_encountered():
 def test__should_return_error__when_no_capital_letter_in_password():
     validator = Validator()
 
-    result = validator.valide("12345ahjbd")
+    result_1 = validator.valide("12345")
+    result_2 = validator.valide("abcdef")
 
-    assert "The password must contain at least one capital letter" in result
+    assert "The password must contain at least one capital letter" in result_1
+    assert "The password must contain at least one capital letter" in result_2
