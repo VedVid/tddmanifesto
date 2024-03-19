@@ -4,12 +4,9 @@
 class Validator:
     @staticmethod
     def valide(password):
-        if len(password) < 8 and sum(ch.isdigit() for ch in password) < 2:
-            return [
-                "Password must be at least 8 characters",
-                "The password must contain at least 2 numbers"
-            ]
+        errors = []
         if len(password) < 8:
-            return "Password must be at least 8 characters"
+            errors.append("Password must be at least 8 characters")
         if sum(ch.isdigit() for ch in password) < 2:
-            return "The password must contain at least 2 numbers"
+            errors.append("The password must contain at least 2 numbers")
+        return errors
