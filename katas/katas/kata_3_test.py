@@ -45,3 +45,11 @@ def test__should_return_error__when_no_capital_letter_in_password():
 
     assert "The password must contain at least one capital letter" in result_1
     assert "The password must contain at least one capital letter" in result_2
+
+
+def test__should_return_error__when_no_special_character_in_password():
+    validator = Validator()
+
+    result = validator.valide("12345abcdef你好你")
+
+    assert "The password must contain at least one special character" in result
