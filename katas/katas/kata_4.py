@@ -13,7 +13,7 @@ class CityFinder:
         else:
             cities_found = []
             for city in self.cities:
-                if searchtxt in city:
+                if searchtxt.lower() in city.lower():
                     cities_found.append(city)
             if not cities_found:
                 return None

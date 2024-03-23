@@ -17,6 +17,6 @@ def test__should_return_none__when_search_text_is_shorter_than_2_character():
 def test__should_return_something__when_seaerch_text_is_longer_or_equal_to_two_characters_and_matches_city_pattern():
     city_finder = CityFinder()
 
-    result = city_finder.find("Pa")
+    result = city_finder.find("pa")
 
     assert result is not None
