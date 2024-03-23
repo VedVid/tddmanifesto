@@ -11,4 +11,10 @@ class CityFinder:
         if len(searchtxt) < 2:
             return None
         else:
-            return "somecity"
+            cities_found = []
+            for city in self.cities:
+                if searchtxt in city:
+                    cities_found.append(city)
+            if not cities_found:
+                return None
+            return cities_found
