@@ -28,3 +28,11 @@ def test__should_return_error__when_9999_barcode_given():
     result = barcode_scanner.scan("9999")
 
     assert result == "Error: barcode not found"
+
+
+def test__should_return_error__when_barcode_empty():
+    barcode_scanner = BarcodeScanner()
+
+    result = barcode_scanner.scan("")
+
+    assert result == "Error: empty barcode"
