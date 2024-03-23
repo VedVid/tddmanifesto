@@ -16,4 +16,9 @@ class BarcodeScanner:
         return "Error: empty barcode"
 
     def total(self, *args):
-        return "$19.75"
+        total_price = 0
+        for arg in args:
+            sprice = self.scan(arg)
+            fprice = float(sprice[1:])
+            total_price += fprice
+        return "$" + str(total_price)
