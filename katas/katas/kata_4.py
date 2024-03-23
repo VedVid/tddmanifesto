@@ -8,7 +8,9 @@ class CityFinder:
     ]
 
     def find(self, searchtxt):
-        if len(searchtxt) < 2:
+        if searchtxt == "*":
+            return self.cities
+        elif len(searchtxt) < 2:
             return None
         else:
             cities_found = []
