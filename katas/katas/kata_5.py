@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
 
+from collections import defaultdict
+
+
 class BarcodeScanner:
 
-    d = {
-        "12345": "$7.25",
-        "23456": "$12.50",
-        "9999": "Error: barcode not found"
-    }
+    d = defaultdict(lambda: "Error: barcode not found")
+    d["12345"] = "$7.25"
+    d["23456"] = "$12.50"
 
     def scan(self, barcode):
         return self.d[barcode]
