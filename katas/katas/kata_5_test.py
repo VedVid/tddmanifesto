@@ -36,3 +36,11 @@ def test__should_return_error__when_barcode_empty():
     result = barcode_scanner.scan("")
 
     assert result == "Error: empty barcode"
+
+
+def test__should_return_sum_of_scanned_products__when_multiple_barcodes_scanned():
+    barcode_scanner = BarcodeScanner()
+
+    result = barcode_scanner.total("12345", "23456")
+
+    assert result == "$19.75"
