@@ -20,3 +20,6 @@ class CityFinder:
             if not cities_found:
                 return None
             return cities_found
+
+    def return_all_cities(self):
+        return self.cities
