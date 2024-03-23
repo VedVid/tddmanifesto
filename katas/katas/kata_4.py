@@ -10,3 +10,5 @@ class CityFinder:
     def find(self, searchtxt):
         if len(searchtxt) < 2:
             return None
+        else:
+            return "somecity"
