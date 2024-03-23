@@ -11,4 +11,6 @@ class BarcodeScanner:
     d["23456"] = "$12.50"
 
     def scan(self, barcode):
-        return self.d[barcode]
+        if barcode:
+            return self.d[barcode]
+        return "Error: empty barcode"
